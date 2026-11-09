@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphcast-latent"
+version = "0.1.0"
+description = "GraphCast latent extraction and graph spectral diagnostics"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.3.5",
+    "scipy==1.17.0",
+    "pygsp==0.6.1",
+]
+
+[project.scripts]
+graphcast-latent-extract = "graphcast_latent.run_extraction:main"
+
+[project.optional-dependencies]
+extraction = [
+    "graphcast @ git+https://github.com/google-deepmind/graphcast.git@7077d40a36db6541e3ed72ccaed1c0d202fa6014",
+    "jax==0.9.0",
+    "jaxlib==0.9.0",
+    "dm-haiku==0.0.16",
+    "xarray==2025.9.0",
+    "ml-dtypes==0.5.4",
+    "h5netcdf==1.8.1",
+    "h5py==3.14.0",
+]
+gpu = ["jax[cuda12]==0.9.0"]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

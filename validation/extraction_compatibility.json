@@ -1,0 +1,551 @@
+{
+  "status": "PASS",
+  "scope": "Pinned official GraphCast inference, latent extraction, storage, and same-input cached execution",
+  "upstream_commit": "7077d40a36db6541e3ed72ccaed1c0d202fa6014",
+  "upstream_git_blob_hashes": {
+    "graphcast.py": "244128fbfcc8e5d0031a2d4e67f309fa31ebd587",
+    "deep_typed_graph_net.py": "27a7a670fec366d974ddeda7718e9b4ed643c5ab"
+  },
+  "execution_environment": "Standalone project .venv",
+  "python": "3.12.12",
+  "device": "NVIDIA H200 NVL",
+  "versions": {
+    "graphcast": "0.2.0.dev0",
+    "jax": "0.9.0",
+    "jaxlib": "0.9.0",
+    "dm-haiku": "0.0.16",
+    "xarray": "2025.9.0",
+    "numpy": "2.3.5",
+    "ml-dtypes": "0.5.4",
+    "h5netcdf": "1.8.1",
+    "h5py": "3.14.0"
+  },
+  "inference_dtype": "bfloat16",
+  "export_dtype": "float32",
+  "xarray_compatibility_shim": false,
+  "extraction_semantics": [
+    "encoder output",
+    "each processor post-residual mesh-node state"
+  ],
+  "small_model": {
+    "resolution_degrees": 1.0,
+    "checkpoint_sha256": "e9438d8ad31ca6e1d3397a33b2508f4bbb6ec16aed84629f9a64712bf756bc29",
+    "autoregressive_steps": 2,
+    "latent_shape_lead_state_node_batch_channel": [
+      2,
+      17,
+      10242,
+      1,
+      512
+    ],
+    "forecast_variables_checked": 11,
+    "forecast_plain_vs_captured_max_absolute_difference": 0.0,
+    "forecast_dimensions_dtypes_coordinates_equal": true,
+    "forecast_finiteness_separately_asserted": true,
+    "haiku_state_trees_equal": true,
+    "npy_reload_shape_dtype_and_values": "exact",
+    "xla_flags": "--xla_gpu_deterministic_ops=true",
+    "jit_specializations_observed": {
+      "plain": 2,
+      "captured": 2,
+      "reference_capture": 2
+    },
+    "forecast_plain_vs_reference_capture_max_absolute_difference": 0.0,
+    "reference_capture_latent_arrays_checked": 34,
+    "reference_capture_latent_max_absolute_difference": 0.0,
+    "cached_execution_scope": "Identical-input cached execution is tested on the larger models; two small-model autoregressive calls produced two JIT specializations."
+  },
+  "larger_mesh_models": [
+    {
+      "model": "operational",
+      "resolution_degrees": 0.25,
+      "checkpoint_sha256": "8f485e84343072785522f6d0696c198c7712e9f0f14070a88c26a9ff35db75a9",
+      "forecast_steps": 1,
+      "identical_input_calls": 2,
+      "latent_shape_call_state_node_batch_channel": [
+        2,
+        17,
+        40962,
+        1,
+        512
+      ],
+      "forecast_plain_vs_captured": [
+        "exact",
+        "exact"
+      ],
+      "forecast_coordinate_values_equal": true,
+      "forecast_finiteness_separately_asserted": true,
+      "forecast_finiteness_check": "Independent uninstrumented forward using the same checkpoint, inputs, environment, and GPU flags",
+      "forecast_variable_finiteness": {
+        "10m_u_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -21.691883087158203,
+          "finite_maximum": 20.10280990600586
+        },
+        "10m_v_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -26.930187225341797,
+          "finite_maximum": 22.608802795410156
+        },
+        "2m_temperature": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 219.68508911132812,
+          "finite_maximum": 317.4063415527344
+        },
+        "geopotential": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -3649.44921875,
+          "finite_maximum": 204640.6875
+        },
+        "mean_sea_level_pressure": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 95502.1875,
+          "finite_maximum": 105352.5390625
+        },
+        "specific_humidity": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -0.0008324724622070789,
+          "finite_maximum": 0.020524026826024055
+        },
+        "temperature": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 185.5742645263672,
+          "finite_maximum": 316.8091125488281
+        },
+        "total_precipitation_6hr": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -0.00034812319790944457,
+          "finite_maximum": 0.07604068517684937
+        },
+        "u_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -41.316349029541016,
+          "finite_maximum": 101.62979125976562
+        },
+        "v_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -63.65583801269531,
+          "finite_maximum": 68.85150146484375
+        },
+        "vertical_velocity": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -6.883396148681641,
+          "finite_maximum": 7.314525604248047
+        }
+      },
+      "coordinate_validity": {
+        "batch": {
+          "dtype": "int64",
+          "value_count": 1,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "lat": {
+          "dtype": "float32",
+          "value_count": 721,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "lon": {
+          "dtype": "float32",
+          "value_count": 1440,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "time": {
+          "dtype": "timedelta64[s]",
+          "value_count": 1,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "level": {
+          "dtype": "int32",
+          "value_count": 13,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        }
+      },
+      "all_captured_latents_finite": true,
+      "haiku_state_trees_equal": true,
+      "saved_latent_cached_repeat_equal": true,
+      "jit_cache_entries_after_each_call": [
+        1,
+        1
+      ],
+      "npy_reload_shape_and_dtype": "exact"
+    },
+    {
+      "model": "amse_ar12",
+      "resolution_degrees": 0.25,
+      "checkpoint_sha256": "248955197e993846fdc3b40d850c2e61e8ebe952c819d4b19bb76ef3333beb91",
+      "forecast_steps": 1,
+      "identical_input_calls": 2,
+      "latent_shape_call_state_node_batch_channel": [
+        2,
+        17,
+        40962,
+        1,
+        512
+      ],
+      "forecast_plain_vs_captured": [
+        "exact",
+        "exact"
+      ],
+      "forecast_coordinate_values_equal": true,
+      "forecast_finiteness_separately_asserted": true,
+      "forecast_finiteness_check": "Independent uninstrumented forward using the same checkpoint, inputs, environment, and GPU flags",
+      "forecast_variable_finiteness": {
+        "10m_u_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -22.076030731201172,
+          "finite_maximum": 20.256759643554688
+        },
+        "10m_v_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -27.749610900878906,
+          "finite_maximum": 24.327117919921875
+        },
+        "2m_temperature": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 219.7151641845703,
+          "finite_maximum": 317.3655700683594
+        },
+        "geopotential": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -3675.7412109375,
+          "finite_maximum": 204639.265625
+        },
+        "mean_sea_level_pressure": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 95460.4921875,
+          "finite_maximum": 105362.6015625
+        },
+        "specific_humidity": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -0.005958040244877338,
+          "finite_maximum": 0.02135138027369976
+        },
+        "temperature": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": 184.6999969482422,
+          "finite_maximum": 316.7510070800781
+        },
+        "total_precipitation_6hr": {
+          "shape": [
+            1,
+            1,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 1038240,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -0.0014737248420715332,
+          "finite_maximum": 0.07701417803764343
+        },
+        "u_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -42.712860107421875,
+          "finite_maximum": 106.69569396972656
+        },
+        "v_component_of_wind": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -65.55709075927734,
+          "finite_maximum": 69.9373550415039
+        },
+        "vertical_velocity": {
+          "shape": [
+            1,
+            1,
+            13,
+            721,
+            1440
+          ],
+          "dtype": "float32",
+          "value_count": 13497120,
+          "nonfinite_count": 0,
+          "nan_count": 0,
+          "infinite_count": 0,
+          "finite_minimum": -11.89171314239502,
+          "finite_maximum": 11.845354080200195
+        }
+      },
+      "coordinate_validity": {
+        "batch": {
+          "dtype": "int64",
+          "value_count": 1,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "lat": {
+          "dtype": "float32",
+          "value_count": 721,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "lon": {
+          "dtype": "float32",
+          "value_count": 1440,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "time": {
+          "dtype": "timedelta64[s]",
+          "value_count": 1,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        },
+        "level": {
+          "dtype": "int32",
+          "value_count": 13,
+          "invalid_count": 0,
+          "unique": true,
+          "matches_target_template": true
+        }
+      },
+      "all_captured_latents_finite": true,
+      "haiku_state_trees_equal": true,
+      "saved_latent_cached_repeat_equal": true,
+      "jit_cache_entries_after_each_call": [
+        1,
+        1
+      ],
+      "npy_reload_shape_and_dtype": "exact"
+    }
+  ],
+  "larger_mesh_xla_flags": "--xla_gpu_deterministic_ops=true --xla_disable_hlo_passes=fusion-dynamic-memcpy-rewriter",
+  "limits": [
+    "Only the pinned official revision and the listed three checkpoints were executed",
+    "Larger-mesh checks compare uninstrumented and captured inference; reference-capture latent equality was checked on the small model",
+    "Real-model inference used batch size one; native-batch callback behavior is additionally covered by synthetic tests",
+    "Autodifferentiation, outer vmap, later upstream revisions, and full historical rollouts are not validated",
+    "Raw weather inputs, weights, normalization files, latents, and private audit scripts are not distributed"
+  ],
+  "compiler_comparison_note": {
+    "default_gpu_compilation_reference_latent_max_absolute_difference": 0.125,
+    "exact_comparisons_require_recorded_xla_flags": true,
+    "model_and_extraction_source_modified_to_force_agreement": false
+  }
+}

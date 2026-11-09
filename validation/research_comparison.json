@@ -1,0 +1,766 @@
+{
+  "status": "PASS",
+  "criterion": "Preserve measured scientific conclusions; exact individual-mode identity is not required. The failed strict pointwise criterion remains in numerical_comparison.json.",
+  "main_encoder_spectra": {
+    "coverage": {
+      "streams": 2,
+      "groups": 4,
+      "samples_per_group": 52,
+      "lead_hours": [
+        0,
+        6,
+        12,
+        18,
+        24,
+        30,
+        36,
+        42,
+        48,
+        54,
+        60,
+        66,
+        72,
+        78,
+        84,
+        90,
+        96,
+        102,
+        108,
+        114,
+        120,
+        240
+      ],
+      "stage": "encoder",
+      "nodes": 10242,
+      "channels": 512
+    },
+    "thresholds_declared_before_calculation": {
+      "mean_mode_relative": 1e-05,
+      "spectrum_relative_l2": 1e-05,
+      "energy_relative": 1e-10,
+      "percentage_claim_rounding_decimals": 1
+    },
+    "max_mean_mode_relative": 2.9969747445009707e-07,
+    "max_spectrum_relative_l2": 2.4058799287230067e-09,
+    "max_signal_relative": 9.483488072974147e-15,
+    "max_dirichlet_relative": 5.606615698185709e-14,
+    "max_ratio_absolute_change": 3.4416913763379853e-15,
+    "deficit_percent_one_decimal_equal": true,
+    "fc_below_reference_mode_count_reference": [
+      0,
+      10199,
+      10190,
+      10191,
+      10192,
+      10194,
+      10196,
+      10195,
+      10192,
+      10192,
+      10192,
+      10191,
+      10190,
+      10187,
+      10187,
+      10192,
+      10190,
+      10187,
+      10186,
+      10185,
+      10183,
+      10159
+    ],
+    "fc_below_reference_mode_count_fresh": [
+      0,
+      10199,
+      10190,
+      10191,
+      10192,
+      10194,
+      10196,
+      10195,
+      10192,
+      10192,
+      10192,
+      10191,
+      10190,
+      10187,
+      10187,
+      10192,
+      10190,
+      10187,
+      10186,
+      10185,
+      10183,
+      10159
+    ],
+    "day5_deficits_reference": [
+      4.025805046988862,
+      28.066798601529687,
+      25.049434971881002
+    ],
+    "day5_deficits_fresh": [
+      4.025805046988862,
+      28.066798601529406,
+      25.049434971880714
+    ],
+    "selected_peak_max_relative": 1.0230288774569573e-10
+  },
+  "main_spectral_claims": {
+    "smoothed_normalized_ratio_max_absolute_change": 2.806269439048492e-09,
+    "smoothed_normalized_ratio_max_relative_change": 2.8594652456703923e-09,
+    "percentages_equal_at_one_decimal": true,
+    "day5_mode_count_changed": 0,
+    "local_peak_maxima_equal": true,
+    "all_checked_lead_peak_windows_equal": true,
+    "all_checked_leads_have_selected_peak_positions": true
+  },
+  "day5_peak_exclusion": {
+    "reference_deficit_percent": 28.579042136227663,
+    "fresh_deficit_percent": 28.57904213623319
+  },
+  "signed_peak_maps": {
+    "coverage": {
+      "streams": 2,
+      "cases_per_stream": 208,
+      "channels": 512,
+      "nodes": 10242,
+      "input_lead_hours": 120,
+      "zero_based_modes": [
+        2433,
+        3668
+      ]
+    },
+    "predeclared_map_relative_l2_tolerance": 1e-06,
+    "map_relative_l2": [
+      [
+        6.382676203151748e-10,
+        1.3421020774075044e-10
+      ],
+      [
+        6.375208842632368e-10,
+        1.3423498115811895e-10
+      ]
+    ],
+    "retained_basis_reduction_relative_l2": [
+      [
+        4.1666335083700764e-16,
+        2.552617510827267e-16
+      ],
+      [
+        1.0569617779395016e-15,
+        1.6016892768324321e-15
+      ]
+    ],
+    "maximum_absolute_map_error": 2.131879340559291e-12,
+    "maximum_relative_l2": 6.382676203151748e-10,
+    "sign_agreement_fraction": [
+      [
+        1.0,
+        0.9998047256395235
+      ],
+      [
+        1.0,
+        0.9998047256395235
+      ]
+    ],
+    "eigenvector_sign_aligned_relative_l2": [
+      6.371941674426617e-10,
+      1.3416240204297897e-10
+    ],
+    "pass": true,
+    "sign_changed_reference_max_absolute": 5.773314489468564e-13,
+    "reference_map_max_absolute": 0.009836516884548773
+  },
+  "local_energy_and_thermodynamic_selection": {
+    "coverage": {
+      "streams": 2,
+      "cases_per_stream": 208,
+      "nodes": 10242,
+      "channels": 512,
+      "input_lead_hours": 24
+    },
+    "predeclared_local_relative_tolerance": 1e-11,
+    "predeclared_tail_requirement": "all selected vertex IDs and stable tail orders equal",
+    "max_local_energy_relative_error": 9.550080385327373e-14,
+    "max_ratio_absolute_error": 1.192379528447418e-13,
+    "domains": {
+      "tropics": {
+        "vertices": 5070,
+        "tail_per_case": 507,
+        "selected_ids_and_order_exact": true,
+        "selection_masks_exact": true,
+        "profiles_delta_from_frozen_predictors_exact": true,
+        "thetae_profiles_from_frozen_predictors_exact": true,
+        "thetae_valid_counts_exact": true,
+        "full_rank_order_exact": true,
+        "ratio_mean_difference": 0.0,
+        "ratio_population_sd_difference": 0.0
+      },
+      "extratropics": {
+        "vertices": 3780,
+        "tail_per_case": 378,
+        "selected_ids_and_order_exact": true,
+        "selection_masks_exact": true,
+        "profiles_delta_from_frozen_predictors_exact": true,
+        "thetae_profiles_from_frozen_predictors_exact": true,
+        "thetae_valid_counts_exact": true,
+        "full_rank_order_exact": true,
+        "ratio_mean_difference": 0.0,
+        "ratio_population_sd_difference": -2.7755575615628914e-17
+      }
+    },
+    "pass": true
+  },
+  "operator_bounds": {
+    "operator_infinity_norm_bound": 4.0245584642661925e-16,
+    "coverage": "all encoder states for both streams, 4 groups, 41 leads, 52 cases",
+    "global_energy_max_relative_real_arithmetic_bound": 5.880704091635441e-15,
+    "min_global_energy": 296390.7329622569,
+    "assumptions": "Saved input signal and original energy; symmetric delta implies spectral norm <= max absolute row sum. This is a real-arithmetic operator bound, not a full implementation recomputation.",
+    "processor_and_encoder_cache": {
+      "max_relative_real_arithmetic_bound": 5.81037167256848e-15,
+      "finite_scalar_count": 44512,
+      "fully_covered_lead_state_pairs": 107,
+      "per_state_lead_counts": [
+        6,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        41
+      ],
+      "scope": "both streams and 208 cases; only finite cached state/lead pairs"
+    }
+  },
+  "larger_mesh_comparison": {
+    "status": "PASS",
+    "graph_factory_roundoff": {
+      "adjacency_exact": false,
+      "adjacency_changed_entries": 3604,
+      "adjacency_max_absolute_error": 2.1458390619955026e-11,
+      "laplacian_max_absolute_error": 6.82509604388315e-14,
+      "laplacian_max_absolute_row_sum": 2.4599766668131906e-13,
+      "nodes": 40962
+    },
+    "fresh_public_factory_basis": {
+      "nodes": 40962,
+      "edges": 163830,
+      "laplacian_max_abs": 6.82509604388315e-14,
+      "max_eigenvalue_abs": 6.439293542825908e-15
+    },
+    "all_displayed_spectra_real_arithmetic_bounds": {
+      "method": "Cauchy-Schwarz bound applied to the saved per-IC power and signal-energy means; both reference and forecast, all 21 displayed leads and 208 cases per model. This is a bound, not a fresh projection. Basis sign alignment and predeclared 1% smoothed-spectrum tolerance.",
+      "sampled_128_max_l2_eigenpair_residual": 1.629253225950404e-14,
+      "sampled_128_max_orthogonality_error": 1.5654144647214707e-14,
+      "basis_distance_max": 4.205007160713845e-06,
+      "basis_distance_median": 3.1750593905418016e-10,
+      "basis_distance_p99": 1.8622751978489765e-08,
+      "models": {
+        "operational": {
+          "max_smoothed_relative_bound": 0.0005175212001277361,
+          "median_smoothed_relative_bound": 2.121309230608254e-06,
+          "p99_smoothed_relative_bound": 4.4272439547209386e-05,
+          "all_under_one_percent": true
+        },
+        "amse_ar12": {
+          "max_smoothed_relative_bound": 0.00042821360317114323,
+          "median_smoothed_relative_bound": 1.9149053695634747e-06,
+          "p99_smoothed_relative_bound": 4.205136611130801e-05,
+          "all_under_one_percent": true
+        }
+      }
+    },
+    "all_encoder_energy_real_arithmetic_bounds": {
+      "method": "Symmetric operator perturbation bound |z^T \u0394L z| <= ||\u0394L||\u221e ||z||\u00b2; computed from saved post-encoder signal and energy, no reprojection. Real arithmetic only.",
+      "delta_laplacian_infinity_norm": 2.4599766668131906e-13,
+      "coverage": "both models, both branches, 21 leads, 208 cases; post-encoder only",
+      "models": {
+        "operational": {
+          "n_values": 8736,
+          "max_relative_bound": 6.519539917247433e-12,
+          "min_energy": 634128.5605965789,
+          "paired_dirichlet_ratio_below_one_certified_leads": 20,
+          "nonzero_lead_count": 20,
+          "day5_ratio_bounds": [
+            0.6127691765871695,
+            0.6127691765996579
+          ],
+          "day5_percent_deficit_rounding_one_decimal_equal": true
+        },
+        "amse_ar12": {
+          "n_values": 8736,
+          "max_relative_bound": 5.163450741323434e-12,
+          "min_energy": 926548.5859823765,
+          "paired_dirichlet_ratio_below_one_certified_leads": 20,
+          "nonzero_lead_count": 20,
+          "day5_ratio_bounds": [
+            0.7972413507963896,
+            0.7972413508103801
+          ],
+          "day5_percent_deficit_rounding_one_decimal_equal": true
+        },
+        "intermodel_paired_dirichlet_ratio_greater_certified_leads": 20,
+        "intermodel_compared_leads": 20
+      }
+    },
+    "direct_projection_check": {
+      "models": {
+        "operational": {
+          "coverage": {
+            "models": 1,
+            "cases_per_model": 208,
+            "streams": [
+              "reference",
+              "forecast"
+            ],
+            "lead_hours": [
+              0,
+              6,
+              24,
+              72,
+              120
+            ],
+            "channels": 512,
+            "nodes": 40962
+          },
+          "max_smoothed_relative_change": 1.8862379984052023e-08,
+          "spectrum_relative_l2_max": 3.774991515163974e-08,
+          "below_one_percent": true,
+          "reference_relative_ratios_old": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9873771958556125,
+              0.821471521770922
+            ],
+            [
+              0.9699006841024794,
+              0.6977480619959013
+            ],
+            [
+              0.950739929811306,
+              0.6294137218853779
+            ],
+            [
+              0.9433124966742237,
+              0.6127510615279854
+            ]
+          ],
+          "reference_relative_ratios_new": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9873771958556121,
+              0.8214715217709264
+            ],
+            [
+              0.9699006841024795,
+              0.697748061995911
+            ],
+            [
+              0.9507399298113061,
+              0.6294137218853911
+            ],
+            [
+              0.9433124966742243,
+              0.612751061528007
+            ]
+          ],
+          "ratio_max_abs_change": 2.1538326677728037e-14,
+          "paired_ratio_old": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9873723848417312,
+              0.8214972196204923
+            ],
+            [
+              0.9698848686096196,
+              0.6978213835265413
+            ],
+            [
+              0.9507238820586937,
+              0.6294436989537151
+            ],
+            [
+              0.943313195071475,
+              0.6127691765934137
+            ]
+          ],
+          "paired_ratio_new": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9873723848417308,
+              0.8214972196204999
+            ],
+            [
+              0.9698848686096195,
+              0.6978213835265559
+            ],
+            [
+              0.9507238820586938,
+              0.6294436989537341
+            ],
+            [
+              0.9433131950714755,
+              0.6127691765934405
+            ]
+          ],
+          "paired_ratio_max_abs_change": 2.6867397195928788e-14,
+          "paired_deficit_one_decimal_equal": true,
+          "ratios_one_decimal_percent_equal": true,
+          "direction_of_reference_deficit_equal": true
+        },
+        "amse_ar12": {
+          "coverage": {
+            "models": 1,
+            "cases_per_model": 208,
+            "streams": [
+              "reference",
+              "forecast"
+            ],
+            "lead_hours": [
+              0,
+              6,
+              24,
+              72,
+              120
+            ],
+            "channels": 512,
+            "nodes": 40962
+          },
+          "max_smoothed_relative_change": 1.724553679441881e-08,
+          "spectrum_relative_l2_max": 3.5365332291934557e-08,
+          "below_one_percent": true,
+          "reference_relative_ratios_old": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9941839569917912,
+              0.9139258968767336
+            ],
+            [
+              0.9836765174006225,
+              0.8435028683475552
+            ],
+            [
+              0.9732926557435232,
+              0.8029109655386499
+            ],
+            [
+              0.9703991075608694,
+              0.7972391707949387
+            ]
+          ],
+          "reference_relative_ratios_new": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9941839569917914,
+              0.9139258968767354
+            ],
+            [
+              0.9836765174006227,
+              0.8435028683475619
+            ],
+            [
+              0.9732926557435237,
+              0.8029109655386597
+            ],
+            [
+              0.9703991075608694,
+              0.7972391707949611
+            ]
+          ],
+          "ratio_max_abs_change": 2.2426505097428162e-14,
+          "paired_ratio_old": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.994187631301084,
+              0.9139270239615256
+            ],
+            [
+              0.9836787546768969,
+              0.8435714859101939
+            ],
+            [
+              0.9733018445132815,
+              0.8029344474524223
+            ],
+            [
+              0.970429471759912,
+              0.7972413508033844
+            ]
+          ],
+          "paired_ratio_new": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              0.9941876313010845,
+              0.9139270239615294
+            ],
+            [
+              0.9836787546768979,
+              0.8435714859102021
+            ],
+            [
+              0.9733018445132818,
+              0.8029344474524343
+            ],
+            [
+              0.9704294717599128,
+              0.7972413508034071
+            ]
+          ],
+          "paired_ratio_max_abs_change": 2.2648549702353193e-14,
+          "paired_deficit_one_decimal_equal": true,
+          "ratios_one_decimal_percent_equal": true,
+          "direction_of_reference_deficit_equal": true
+        }
+      },
+      "intermodel": {
+        "forecast_signal": {
+          "old_difference": [
+            1993926.795151852,
+            2103081.9867289886,
+            2205054.7392320856,
+            2336511.989353977,
+            2415687.14565574
+          ],
+          "new_difference": [
+            1993926.795151811,
+            2103081.9867289662,
+            2205054.7392320447,
+            2336511.9893539473,
+            2415687.1456556916
+          ],
+          "sign_equal": true
+        },
+        "forecast_dirichlet": {
+          "old_difference": [
+            139244.25107520097,
+            227896.26763023844,
+            276374.05986756436,
+            300250.8547852328,
+            311433.7628055841
+          ],
+          "new_difference": [
+            139244.25107520144,
+            227896.2676302396,
+            276374.05986756785,
+            300250.8547852399,
+            311433.7628055933
+          ],
+          "sign_equal": true
+        },
+        "paired_signal_ratio": {
+          "old_difference": [
+            0.0,
+            0.006815246459352831,
+            0.013793886067277272,
+            0.022577962454587763,
+            0.02711627668843697
+          ],
+          "new_difference": [
+            0.0,
+            0.006815246459353608,
+            0.013793886067278383,
+            0.022577962454587985,
+            0.027116276688437302
+          ],
+          "sign_equal_nonzero_leads": true
+        },
+        "paired_dirichlet_ratio": {
+          "old_difference": [
+            0.0,
+            0.09242980434103332,
+            0.1457501023836526,
+            0.17349074849870716,
+            0.18447217420997075
+          ],
+          "new_difference": [
+            0.0,
+            0.09242980434102943,
+            0.14575010238364627,
+            0.17349074849870016,
+            0.18447217420996653
+          ],
+          "sign_equal_nonzero_leads": true
+        }
+      },
+      "paired_percentile_and_scalar_check": {
+        "coverage": {
+          "models": 2,
+          "cases_per_model": 208,
+          "streams": 2,
+          "input_lead_hours": [
+            0,
+            6,
+            24,
+            72,
+            120
+          ]
+        },
+        "thresholds": {
+          "scalar_relative": 1e-09,
+          "paired_ratio_absolute": 1e-10,
+          "band_absolute": 1e-10
+        },
+        "models": {
+          "operational": {
+            "states_checked": 2080,
+            "max_signal_relative_error": 2.006553996460749e-14,
+            "max_dirichlet_relative_error": 4.2827861557225086e-13,
+            "max_individual_paired_dirichlet_ratio_absolute_change": 1.4910295220715852e-13,
+            "max_mean_paired_dirichlet_ratio_absolute_change": 2.653433028854124e-14,
+            "max_p05_p95_band_absolute_change": 4.5852210917018965e-14,
+            "reference_band_p05_p95": [
+              [
+                1.0,
+                0.8026551701612332,
+                0.6875318346786482,
+                0.6172687870835681,
+                0.6000412802231149
+              ],
+              [
+                1.0,
+                0.8382330979572401,
+                0.7078382466815153,
+                0.6399155003222629,
+                0.6283070885833456
+              ]
+            ],
+            "fresh_band_p05_p95": [
+              [
+                1.0,
+                0.8026551701612233,
+                0.6875318346786582,
+                0.6172687870836066,
+                0.6000412802231451
+              ],
+              [
+                1.0,
+                0.8382330979572448,
+                0.7078382466815268,
+                0.6399155003222724,
+                0.6283070885832998
+              ]
+            ],
+            "one_decimal_mean_deficits_equal": true,
+            "one_decimal_band_deficits_equal": true,
+            "case_ratio_rank_order_exact": true,
+            "reference_deficit_at_all_nonzero_checked_leads": true,
+            "pass": true
+          },
+          "amse_ar12": {
+            "states_checked": 2080,
+            "max_signal_relative_error": 2.1052450192641808e-14,
+            "max_dirichlet_relative_error": 3.4360544148256767e-13,
+            "max_individual_paired_dirichlet_ratio_absolute_change": 1.3022916078853086e-13,
+            "max_mean_paired_dirichlet_ratio_absolute_change": 2.19824158875781e-14,
+            "max_p05_p95_band_absolute_change": 4.8183679268731794e-14,
+            "reference_band_p05_p95": [
+              [
+                1.0,
+                0.8984770078187201,
+                0.8319984820324268,
+                0.79082192240873,
+                0.7844441927516475
+              ],
+              [
+                1.0,
+                0.9281480356367289,
+                0.8536841965211946,
+                0.816003957970714,
+                0.812495766665465
+              ]
+            ],
+            "fresh_band_p05_p95": [
+              [
+                1.0,
+                0.8984770078187352,
+                0.8319984820324433,
+                0.7908219224087653,
+                0.7844441927516718
+              ],
+              [
+                1.0,
+                0.9281480356367379,
+                0.8536841965211771,
+                0.8160039579706658,
+                0.8124957666654946
+              ]
+            ],
+            "one_decimal_mean_deficits_equal": true,
+            "one_decimal_band_deficits_equal": true,
+            "case_ratio_rank_order_exact": true,
+            "reference_deficit_at_all_nonzero_checked_leads": true,
+            "pass": true
+          }
+        },
+        "paired_intermodel": {
+          "fine_tuned_minus_operational_reference": [
+            0.0,
+            0.09242980434103332,
+            0.14575010238365294,
+            0.17349074849870771,
+            0.1844721742099712
+          ],
+          "fine_tuned_minus_operational_fresh": [
+            0.0,
+            0.09242980434102899,
+            0.1457501023836465,
+            0.17349074849870005,
+            0.18447217420996664
+          ],
+          "sign_equal_at_nonzero_checked_leads": true,
+          "fine_tuned_ratio_greater_at_nonzero_checked_leads": true
+        },
+        "pass": true
+      }
+    }
+  },
+  "limits": [
+    "Numerical evidence uses frozen stored inputs; raw data and pretrained model assets are not distributed.",
+    "Selected thermodynamic profile inputs were recomputed from frozen physical predictors, not regenerated weather fields.",
+    "Other channel, local, and physical diagnostics retain the same functional definitions; not every historical array or renderer was rerun.",
+    "Operator norm bounds are real-arithmetic statements and do not include floating-point accumulation error."
+  ],
+  "adoption_scope": "Checked manuscript claims and explicitly stated functional invariants; direct projections and real-arithmetic bounds are separate evidence categories.",
+  "calculation_methods": {
+    "representative_transforms": "Native CPU PyGSP Graph.gft/igft",
+    "full_cohort_spectra": "Float64 GPU projection using freshly computed PyGSP bases",
+    "thermodynamic_selection": "Public local_dirichlet_energy evaluated directly on CPU",
+    "bounds": "Real-arithmetic perturbation bounds, excluding floating-point accumulation error"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "Installed console entry point, real checkpoint and real weather initialization; independent plain predictions and legacy-method latent capture",
+  "executed_runner_sha256": "17cd398062760692e9f5d8f951a5918b5fcfd4958f387065f159a8924c698001",
+  "upstream_commit": "7077d40a36db6541e3ed72ccaed1c0d202fa6014",
+  "command_template": "graphcast-latent-extract --checkpoint CHECKPOINT.npz --stats-dir STATS_DIR --input INPUT.nc --steps N --output LATENTS.npy --forecast-output FORECAST.nc",
+  "command_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "device": "NVIDIA H200 NVL",
+  "inference_dtype": "bfloat16",
+  "export_dtype": "float32",
+  "xla_flags": "--xla_gpu_deterministic_ops=true --xla_disable_hlo_passes=fusion-dynamic-memcpy-rewriter",
+  "input_contract": "Two six-hourly initial weather frames; no future meteorological truth supplied. Future forcings generated and target templates initialized to NaN.",
+  "time_semantics": "Latent states at input leads 0, 6, ... hours correspond to forecasts at leads 6, 12, ... hours. Forecast absolute UTC clocks checked independently against initialization time.",
+  "models": [
+    {
+      "model": "small",
+      "input_steps": 2,
+      "latent_shape": [
+        2,
+        17,
+        10242,
+        1,
+        512
+      ],
+      "latent_state_count": 34,
+      "latent_bitwise_equal_to_independent_legacy_capture": true,
+      "plain_vs_cli_forecast_variables_bitwise_equal_after_named_dimension_alignment": 11,
+      "forecast_coordinates_equal": [
+        "batch",
+        "lat",
+        "lon",
+        "level",
+        "time"
+      ],
+      "forecast_datetimes_match_initialization_and_leads": true,
+      "geometry_official_vertices_and_merged_face_edges_exact": true,
+      "analysis_channels": 4,
+      "dirichlet_energy": 1600.445384633425,
+      "local_sum": 1600.445384633424,
+      "input_sha256": "93f30890ea0b9e4aa818af17699787608a1352fcebbe850fdcdee93ff8866f16",
+      "checkpoint_sha256": "e9438d8ad31ca6e1d3397a33b2508f4bbb6ec16aed84629f9a64712bf756bc29",
+      "statistics_sha256": {
+        "stats_mean_by_level.nc": "e6e724b94cd27707903cdc5cf5784d420bab306f722e631f4455e25c96da9931",
+        "stats_stddev_by_level.nc": "29f941d8c34906b87a1745f93b2308d1e169ec9bbdc4c5491479c771fe92c3cb",
+        "stats_diffs_stddev_by_level.nc": "e688fc51fe72e1dc897678ef5ce9889add64e28e13f3cec4758d8e47d429c1ce"
+      }
+    },
+    {
+      "model": "operational",
+      "input_steps": 1,
+      "latent_shape": [
+        1,
+        17,
+        40962,
+        1,
+        512
+      ],
+      "latent_state_count": 17,
+      "latent_bitwise_equal_to_independent_legacy_capture": true,
+      "plain_vs_cli_forecast_variables_bitwise_equal_after_named_dimension_alignment": 11,
+      "forecast_coordinates_equal": [
+        "batch",
+        "lat",
+        "lon",
+        "level",
+        "time"
+      ],
+      "forecast_datetimes_match_initialization_and_leads": true,
+      "geometry_official_vertices_and_merged_face_edges_exact": true,
+      "analysis_channels": 4,
+      "dirichlet_energy": 1793.0603297130008,
+      "local_sum": 1793.0603297129967,
+      "input_sha256": "58af0b0a09ef5251403c47f3eeff1fc763ac6d84855f26c42414f6956edbb700",
+      "checkpoint_sha256": "8f485e84343072785522f6d0696c198c7712e9f0f14070a88c26a9ff35db75a9",
+      "statistics_sha256": {
+        "stats_mean_by_level.nc": "e6e724b94cd27707903cdc5cf5784d420bab306f722e631f4455e25c96da9931",
+        "stats_stddev_by_level.nc": "29f941d8c34906b87a1745f93b2308d1e169ec9bbdc4c5491479c771fe92c3cb",
+        "stats_diffs_stddev_by_level.nc": "e688fc51fe72e1dc897678ef5ce9889add64e28e13f3cec4758d8e47d429c1ce"
+      }
+    },
+    {
+      "model": "amse",
+      "input_steps": 1,
+      "latent_shape": [
+        1,
+        17,
+        40962,
+        1,
+        512
+      ],
+      "latent_state_count": 17,
+      "latent_bitwise_equal_to_independent_legacy_capture": true,
+      "plain_vs_cli_forecast_variables_bitwise_equal_after_named_dimension_alignment": 11,
+      "forecast_coordinates_equal": [
+        "batch",
+        "lat",
+        "lon",
+        "level",
+        "time"
+      ],
+      "forecast_datetimes_match_initialization_and_leads": true,
+      "geometry_official_vertices_and_merged_face_edges_exact": true,
+      "analysis_channels": 4,
+      "dirichlet_energy": 2059.055258860941,
+      "local_sum": 2059.0552588609344,
+      "input_sha256": "58af0b0a09ef5251403c47f3eeff1fc763ac6d84855f26c42414f6956edbb700",
+      "checkpoint_sha256": "248955197e993846fdc3b40d850c2e61e8ebe952c819d4b19bb76ef3333beb91",
+      "statistics_sha256": {
+        "stats_mean_by_level.nc": "e6e724b94cd27707903cdc5cf5784d420bab306f722e631f4455e25c96da9931",
+        "stats_stddev_by_level.nc": "29f941d8c34906b87a1745f93b2308d1e169ec9bbdc4c5491479c771fe92c3cb",
+        "stats_diffs_stddev_by_level.nc": "e688fc51fe72e1dc897678ef5ce9889add64e28e13f3cec4758d8e47d429c1ce"
+      }
+    }
+  ],
+  "storage_and_geometry": "Completed NPY and JSON reloaded, finite values and ordered state names checked; exported vertices and merged face-edge indices equal the pinned upstream hierarchy. Four-channel total and local Dirichlet energy agree to 1e-12 relative.",
+  "input_and_asset_integrity": "Checkpoint, statistics, static-field and validation-input SHA256 values checked again after execution; weather archives only read.",
+  "limits": [
+    "One real initialization and batch size one per checkpoint; small uses two autoregressive steps and larger models one each.",
+    "Forecast values compared after matching named dimension order. Independent reference forecast metadata inherited the initialization datetime; CLI valid datetimes checked separately against expected UTC.",
+    "No full historical rollout, retraining, or weather-data publication was performed."
+  ]
+}

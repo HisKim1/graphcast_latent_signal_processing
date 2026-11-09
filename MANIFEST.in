@@ -1,0 +1,8 @@
+include README.md NOTICE.md VALIDATION.md uv.lock .python-version
+recursive-include tests *.py
+recursive-include validation *.py *.json
+prune validation/private
+prune .venv
+prune .validation
+prune build
+prune dist

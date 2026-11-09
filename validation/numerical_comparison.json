@@ -1,0 +1,87 @@
+{
+  "comparison_scope": "Representative strict pointwise diagnostic; scientific adoption is evaluated separately in research_comparison.json",
+  "strict_pointwise_gate_pass": false,
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pygsp": "0.6.1"
+  },
+  "scope": {
+    "real_states": 8,
+    "nodes": 10242,
+    "channels": 512,
+    "input_dtype": "float32",
+    "analysis_dtype": "float64",
+    "stage_types": [
+      "encoder",
+      "final_processor"
+    ],
+    "lead_hours": [
+      0,
+      120
+    ],
+    "streams": 2,
+    "initial_conditions_per_stream": 1
+  },
+  "tolerances": {
+    "laplacian_scaled_absolute": 1e-14,
+    "eigenvalue_relative": 1e-12,
+    "eigenvalue_absolute": 1e-12,
+    "energy_relative": 2e-12,
+    "local_relative": 3e-13,
+    "local_absolute": 1e-12,
+    "coefficient_relative": 3e-12,
+    "coefficient_absolute": 3e-12,
+    "reconstruction_relative_norm": 5e-12,
+    "cluster_gap_scaled": 5e-12,
+    "subspace_relative_norm": 5e-09
+  },
+  "graph": {
+    "nodes": 10242,
+    "undirected_edges": 40950,
+    "adjacency_exact": true,
+    "laplacian_scaled_max_error": 8.326672684688674e-17,
+    "pass": true
+  },
+  "max_errors": {
+    "eigenvalues_absolute": 1.3322676295501878e-15,
+    "global_energy_relative": 2.7922227426651355e-14,
+    "channel_energy_relative": 3.07392691855004e-15,
+    "local_energy_relative": 1.318415630624569e-15,
+    "fresh_basis_mode_power_relative": 1.388327794175304e-06,
+    "fresh_basis_mode_power_absolute": 0.0039756352780386806,
+    "selected_mode_power_relative": 1.6184732268951334e-10,
+    "fresh_spectrum_relative_l2": 1.5294049894475987e-08,
+    "fresh_coefficient_relative_frobenius_after_sign": 9.712082879182248e-08,
+    "fresh_power_l1_difference_over_total": 4.965670991522714e-09,
+    "retained_basis_reconstruction_relative_norm": 3.823559511732329e-12,
+    "retained_basis_coefficients_absolute": 0.0,
+    "retained_basis_mode_power_absolute": 0.0,
+    "retained_basis_vs_saved_global_energy_relative": 1.575186967064608e-14
+  },
+  "basis_provenance_checks": {
+    "input_sha256": {
+      "adjacency.npz": "bd8bb3deefd344aa0a52d818ddeaae80cdaa0e50db83b0c88187f58544c5dea7",
+      "signals.npy": "f2585286ce2ea29bc301acd4cd275250682eacfcadf6f734050e73cc296b96c8",
+      "reference_local.npy": "a3e2d719ad87eff329aabcc91272b9a8769268a2188bc8a00dfd28a66e9707d1",
+      "reference_channel.npy": "28de7c4f6c31aa8be6556b38e226f7972e35d45c67c280b0d50151821013bf7e",
+      "reference_basis": "5cd98c980969d7a57137a45e343a21b5ef0245d9fc520a1e1ce0b1dc0f29bef6",
+      "reference_eigenvalues": "d2228dade50adb67572d386e6638ae0db52ae8754e5629d1d6032aa71605d535"
+    },
+    "all_eigenpairs_max_l2_residual": 1.1922358721931825e-14,
+    "selected_orthogonality_max_error": 5.329070518200751e-15,
+    "mesh_adjacency_exact": true
+  },
+  "strict_gates": {
+    "graph": true,
+    "energy": true,
+    "fresh_individual_modes": false,
+    "retained_basis": true
+  },
+  "interpretation": "The fresh PyGSP basis passes mathematical identities but exceeds the 3e-12 strict individual-mode criterion. The failed strict gate and measured errors are retained; claim-specific validation determines scientific adoption.",
+  "limits": [
+    "Eight representative states, not a complete research-cohort evaluation.",
+    "Native PyGSP transforms use CPU NumPy/SciPy; full-cohort projection and scientific coverage are documented separately.",
+    "The supplied-basis calculation is a reference diagnostic, not a separate public transform API."
+  ]
+}
